@@ -1,0 +1,34 @@
+<head>
+  <title>wodify</title>
+</head>
+
+<body>
+  <h1>Wodify</h1>
+
+  {{> addWod}}
+
+  <ul>
+  {{#each workout}}
+    {{> wodItem}}
+  {{/each}}
+  </ul>
+</body>
+
+<template name="addWod">
+  <form class="add-wod">
+    <p><input type="text" name="wodname" placeholder="WOD name"/></p>
+
+    <div id="movement">
+      <input type="text" name="movement" placeholder="Movementname"  required />
+    </div>
+    <p><input type="button" name="movement" value="Add More Movements" class='add-more-movements'/></p>
+    <p><input type="SUBMIT"/></p>
+  </form>
+</template>
+
+<template name="wodItem">
+  <p class='wodname'>{{wodname}}</p>
+  {{#each movement}}
+    <li class="movement">{{this}}</li>
+  {{/each}}
+</template>
