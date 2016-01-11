@@ -3,10 +3,13 @@
 </head>
 
 <body>
-  <h1>Wodify</h1>
-
+  <h1>Dev</h1>
+  <!--{{#if workout ==  WOD}}-->
   {{> addWodForm}}
-
+  {{#else if workout == LIFT}}
+  <!--{{> addLiftForm}}-->
+  <!--{{#else if workout == SKILL }}-->
+  <!--{{> addSkillForm}}-->
   <ul>
   {{#each workout}}
     {{> wodItem}}
@@ -15,9 +18,9 @@
 </body>
 
 
-<template name="wodItem">
-  <p class='wodname'>{{wodname}}</p>
-  {{#each movement}}
-    <li class="movement">{{this}}</li>
-  {{/each}}
-</template>
+<!--<template name="wodItem">-->
+  <!--<p class='wodname'>{{wodname}}</p>-->
+  <!--{{#each movement}}-->
+    <!--<li class="movement">{{this}}</li>-->
+  <!--{{/each}}-->
+<!--</template>-->

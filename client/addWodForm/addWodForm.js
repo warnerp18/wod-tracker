@@ -2,20 +2,36 @@
     'submit .add-wod-form': function (e) {
       e.preventDefault();
       var movement = [];
-      $('#movement input').each( function(i, node){
-        console.log(node.value);
+      $('#movement input.movement').each( function(i, node){
+        //console.log(node.value);
+        //console.log('hello');
         movement.push(node.value);
+      });
+      var result= [];
+      $('#movement input.result').each(function(i, node){
+        result.push(node.value);
+      });
+      var addMovement = [];
+      $('#movement input.addmovement').each( function(i, node){
+        addMovement.push(node.value);
+      });
+      var addResult = [];
+      $('#movement input.addresult').each( function(i, node){
+        addResult.push(node.value);
       });
 
       Wods.insert({
-        movement: movement,
         wodname: e.target.wodname.value,
+        movement: movement,
+        addMovement: addMovement,
+        result: result,
+        addResult: addResult,
         createdAt: new Date(),
       });
     },
 
     'click .add-more-movements': function(){
-      var newField = '<input type="text" name="addmovement" placeholder="Movement name"/>';
+      var newField = '<div><input type="text" class="addmovement" name="addmovement" placeholder="Movement name"/> <input type="text" class="addresult" name="addresult" placeholder="Enter your result"/></div>';
       $('#movement').append(newField);
     }
   });

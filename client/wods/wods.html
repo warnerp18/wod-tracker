@@ -1,7 +1,18 @@
 <template name="wodItem">
-  {{debug}}
   <p class='wodname'>{{wodname}}</p>
   {{#each movement}}
-    <li class="movement">{{this}}</li>
+    <span><li class="movement">{{this}}</li></span>
+  {{/each}}
+
+  {{#each result}}
+    <span class="result">{{this}}</span>
+  {{/each}}
+
+  {{#each addMovement}}
+    <span class="movement">{{this}}</span>
+  {{/each}}
+
+  {{#each addResult}}
+    <span class="result">{{this}}</span>
   {{/each}}
 </template>

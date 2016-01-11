@@ -1,10 +1,17 @@
 <template name="addWodForm">
   <form class="add-wod-form">
-    <p><input type="text" name="wodname" placeholder="WOD name"/></p>
+    <p>Choose what type of workout this is</p>
+    <SELECT required>
+      <option>Lift</option>
+      <option>Skill</option>
+      <option>WOD</option>
+      <option>Other</option>
+    </SELECT>
+    <p><input type="text" name="wodname" placeholder="WOD name"/> </p>
 
     <div id="movement">
-      <input type="text" name="movement" placeholder="Movementname"  required />
-      <input type="text" name="result" placeholder="Enter your result" />
+      <input type="text" name="movement" placeholder="Movement Name" class="movement"  required />
+      <input type="text" name="result" placeholder="Enter your result" class="result" />
     </div>
     <p><input type="button" name="movement" value="Add More Movements" class='add-more-movements'/></p>
     <p><input type="SUBMIT"/></p>
