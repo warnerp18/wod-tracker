@@ -4,9 +4,10 @@
 
 <body>
   <h1>Dev</h1>
-  <!--{{#if workout ==  WOD}}-->
+  {{#if selectListVal}}
   {{> addWodForm}}
-  {{#else if workout == LIFT}}
+  {{/if}}
+  <!--{{#else if workout == LIFT}}-->
   <!--{{> addLiftForm}}-->
   <!--{{#else if workout == SKILL }}-->
   <!--{{> addSkillForm}}-->

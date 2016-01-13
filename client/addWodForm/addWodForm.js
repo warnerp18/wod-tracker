@@ -35,3 +35,7 @@
       $('#movement').append(newField);
     }
   });
+  Template.addWodForm.helpers({
+    var selectListVal = $('#workoutSelection').val();
+    console.log(selectListVal);
+  })

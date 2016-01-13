@@ -1,11 +1,11 @@
 <template name="addWodForm">
   <form class="add-wod-form">
     <p>Choose what type of workout this is</p>
-    <SELECT required>
-      <option>Lift</option>
-      <option>Skill</option>
-      <option>WOD</option>
-      <option>Other</option>
+    <SELECT id="workoutSelection" required>
+      <option value="lift">Lift</option>
+      <option value="skill">Skill</option>
+      <option value="wod">WOD</option>
+      <option value="other">Other</option>
     </SELECT>
     <p><input type="text" name="wodname" placeholder="WOD name"/> </p>
 
