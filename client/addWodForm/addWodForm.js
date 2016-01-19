@@ -1,10 +1,22 @@
   Template.addWodForm.events({
+    'change #typeSelection': function(e, template){
+
+      var getWorkoutType = template.$('#typeSelection').val();
+      if(getWorkoutType === 'wod'){
+        console.log("hello wod");
+       // {{ wodTemplate}}
+      }else if(getWorkoutType === 'skill'){
+        console.log("hello skill");
+      }else if(getWorkoutType === 'other'){
+        console.log('hello other');
+      }else if(getWorkoutType === 'lift'){
+        console.log('hello lift');
+      }
+    },
     'submit .add-wod-form': function (e) {
       e.preventDefault();
       var movement = [];
       $('#movement input.movement').each( function(i, node){
-        //console.log(node.value);
-        //console.log('hello');
         movement.push(node.value);
       });
       var result= [];
@@ -36,6 +48,7 @@
     }
   });
   Template.addWodForm.helpers({
-    var selectListVal = $('#workoutSelection').val();
-    console.log(selectListVal);
-  })
+    //wodTemplate: function(){
+       //return '<p>WOD!!!!</p>'
+    //}
+  });

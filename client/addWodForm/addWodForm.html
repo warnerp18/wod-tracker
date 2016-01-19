@@ -1,7 +1,7 @@
 <template name="addWodForm">
   <form class="add-wod-form">
     <p>Choose what type of workout this is</p>
-    <SELECT id="workoutSelection" required>
+    <SELECT id="typeSelection" required>
       <option value="lift">Lift</option>
       <option value="skill">Skill</option>
       <option value="wod">WOD</option>
@@ -16,4 +16,5 @@
     <p><input type="button" name="movement" value="Add More Movements" class='add-more-movements'/></p>
     <p><input type="SUBMIT"/></p>
   </form>
+  {{skill}}
 </template>
