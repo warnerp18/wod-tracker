@@ -7,14 +7,16 @@
       <option value="wod">WOD</option>
       <option value="other">Other</option>
     </SELECT>
-    <p><input type="text" name="wodname" placeholder="WOD name"/> </p>
-
-    <div id="movement">
-      <input type="text" name="movement" placeholder="Movement Name" class="movement"  required />
-      <input type="text" name="result" placeholder="Enter your result" class="result" />
-    </div>
-    <p><input type="button" name="movement" value="Add More Movements" class='add-more-movements'/></p>
-    <p><input type="SUBMIT"/></p>
+      {{> lift}}
+    {{#if renderWodForm}}
+      {{> wod}}
+    {{/if}}
+    {{#if renderSkillForm}}
+      {{> skill}}
+    {{/if}}
+    {{#if renderLiftForm}}
+      {{> lift}}
+    {{/if}}
   </form>
-  {{skill}}
+  {{wodResult}}
 </template>

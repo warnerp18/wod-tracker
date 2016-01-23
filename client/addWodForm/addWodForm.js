@@ -2,17 +2,13 @@
     'change #typeSelection': function(e, template){
 
       var getWorkoutType = template.$('#typeSelection').val();
-      if(getWorkoutType === 'wod'){
-        console.log("hello wod");
-       // {{ wodTemplate}}
-      }else if(getWorkoutType === 'skill'){
-        console.log("hello skill");
-      }else if(getWorkoutType === 'other'){
-        console.log('hello other');
-      }else if(getWorkoutType === 'lift'){
-        console.log('hello lift');
-      }
+      Session.set('wod', getWorkoutType);
+      Session.set('skill', getWorkoutType);
+      Session.set('lift', getWorkoutType);
+      $('.liftTemplate-container').remove();
     },
+
+
     'submit .add-wod-form': function (e) {
       e.preventDefault();
       var movement = [];
@@ -42,13 +38,27 @@
       });
     },
 
-    'click .add-more-movements': function(){
-      var newField = '<div><input type="text" class="addmovement" name="addmovement" placeholder="Movement name"/> <input type="text" class="addresult" name="addresult" placeholder="Enter your result"/></div>';
-      $('#movement').append(newField);
-    }
   });
+
+
   Template.addWodForm.helpers({
-    //wodTemplate: function(){
-       //return '<p>WOD!!!!</p>'
-    //}
+    wodResult: function(doc){
+      //console.log(Wods.find({id: Session.get('id')}).fetch());
+      return Wods.findOne({wodname: 'murph'});
+    },
+    renderWodForm: function(){
+      if(Session.get('wod') === 'wod'){
+        return Session.get('wod');
+      }
+    },
+    renderSkillForm: function(){
+      if(Session.get('skill') === 'skill'){
+        return Session.get('skill');
+      }
+    },
+    renderLiftForm: function(){
+      if(Session.get('lift') === 'lift'){
+        return Session.get('lift');
+      }
+    },
   });

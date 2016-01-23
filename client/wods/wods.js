@@ -1,5 +1,5 @@
-Template.wodItem.helpers({
-  debug: function(){
+//Template.wodItem.helpers({
+  //debug: function(){
 
-  }
-});
+  //}
+//});
