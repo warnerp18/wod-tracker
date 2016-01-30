@@ -18,5 +18,14 @@
       {{> lift}}
     {{/if}}
   </form>
-  {{wodResult}}
+  <div class="results-container">
+  {{#each wodResult}}
+  <div class="result-container">
+    {{this.wodname}}{{this.movement}}
+    {{#each this.addMovement}}
+      <p>{{this}}</p>
+    {{/each}}
+    </div>
+  {{/each}}
+  </div>
 </template>
