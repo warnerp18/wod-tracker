@@ -1,10 +1,14 @@
 <template name='wod'>
-  <p><input type="text" name="wodname" placeholder="WOD name"/> </p>
-
+  <form class="add-wod-form-template">
+  <p><input type="text" name="wodName" placeholder="WOD name" class="wodname"/> </p>
   <div id="movement">
+    <p>Is this one of the "GIRLS"?
+    <input type="checkbox" name='girl' class="girl"></p>
+    <p><input type="text" name="wodType" placeholder="AQAP/AMRAP " class="wodname"/> </p>
     <input type="text" name="movement" placeholder="Movement Name" class="movement"  required />
     <input type="text" name="result" placeholder="Enter your result" class="result" />
   </div>
   <p><input type="button" name="movement" value="Add More Movements" class='add-more-movements'/></p>
-  <p><input type="SUBMIT"/></p>
+  <p><input type="submit" class="submit-wod"/></p>
+  </form>
 </template>

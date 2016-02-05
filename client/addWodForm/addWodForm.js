@@ -11,7 +11,7 @@
 
   Template.addWodForm.helpers({
     wodResult: function(doc){
-      return Wods.find().fetch();
+      return Wod.find().fetch();
     },
     renderWodForm: function(){
       if(Session.get('wod') === 'wod'){

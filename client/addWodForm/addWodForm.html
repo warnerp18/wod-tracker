@@ -7,6 +7,7 @@
       <option value="wod">WOD</option>
       <option value="other">Other</option>
     </SELECT>
+  </form>
       {{> lift}}
     {{#if renderWodForm}}
       {{> wod}}
@@ -17,11 +18,11 @@
     {{#if renderLiftForm}}
       {{> lift}}
     {{/if}}
-  </form>
   <div class="results-container">
   {{#each wodResult}}
   <div class="result-container">
-    {{this.wodname}}{{this.movement}}
+    <p>Wod Name: {{this.wodName}}</p><p>AQAP/AMRAP: {{this.wodType}}</p>
+    {{this.movement}}{{this.girl}}{{this.result}}
     {{#each this.addMovement}}
       <p>{{this}}</p>
     {{/each}}
